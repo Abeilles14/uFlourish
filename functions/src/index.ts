@@ -6,7 +6,8 @@ import * as bodyParser from "body-parser";
 
 admin.initializeApp(functions.config().firebase);
 
-//const db = admin.firestore();
+//initialize database
+const db = admin.firestore();
 
 const app = express();
 const main = express();
@@ -22,7 +23,7 @@ main.use(bodyParser.urlencoded({ extended: false }));
 // a parameter
 export const webApi = functions.https.onRequest(main);
 
-
+//first test
 app.get('/warmup', (request, response) => {
 
     response.send('Warming up friend.');
